@@ -23,9 +23,7 @@
 
 		public function onMessage(ConnectionInterface $from, $msg)
 		{
-			//echo sprintf('Connection %d sending message "%s"' . "\n", $from->resourceId, $msg);
-			echo "BS listener\n=============================================\n";
-			echo $msg;
+
 			$obj = json_decode($msg);
 			$obj->client->data->message = 'badaboum boudoum boudoum';
 			$obj = json_encode($obj);
@@ -35,10 +33,9 @@
 
 		public function dummyMethod(ConnectionInterface $from, $msg)
 		{
-			sleep(6);
+			
 			$from->send($this->response->make($msg));
 
-			//	echo "asdfgh";
 			return 1;
 		}
 
