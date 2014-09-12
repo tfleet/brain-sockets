@@ -28,10 +28,10 @@
 			$obj->client->data->message = 'badaboum boudoum boudoum';
 			$obj = json_encode($obj);
 
-			$this->dummyMethod($from,$obj);
+			$this->testMethod($from,$obj);
 		}
 
-		public function dummyMethod(ConnectionInterface $from, $msg)
+		public function testMethod(ConnectionInterface $from, $msg)
 		{
 			
 			$from->send($this->response->make($msg));
