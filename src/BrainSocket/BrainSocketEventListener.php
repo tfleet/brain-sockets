@@ -25,7 +25,7 @@
 		{
 
 			$obj = json_decode($msg);
-			$obj->client->data->message = 'badaboum boudoum boudoum boum';
+			$obj->client->data->message = 'badaboum boudoum boudoum boum---';
 			$obj = json_encode($obj);
 
 			$this->testMethod($from,$obj);
