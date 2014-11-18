@@ -23,20 +23,7 @@
 
 		public function onMessage(ConnectionInterface $from, $msg)
 		{
-
-			$obj = json_decode($msg);
-			$obj->client->data->message = 'badaboum boudoum boudoum boum--- ASXZ';
-			$obj = json_encode($obj);
-
-			$this->testMethod($from,$obj);
-		}
-
-		public function testMethod(ConnectionInterface $from, $msg)
-		{
-			
-			$from->send($this->response->make($msg));
-
-			return 1;
+			$from->send( $this->response->make($msg) );
 		}
 
 		public function onClose(ConnectionInterface $conn)
